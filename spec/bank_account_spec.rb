@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank_account'
 
 describe BankAccount do
@@ -16,10 +18,10 @@ describe BankAccount do
     subject.deposit(100)
     subject.withdraw(50)
     expect(subject.balance).to eq 50
-  end 
+  end
 
   it 'allows the user to see the date of transaction' do
     subject.deposit(100)
-    expect(subject.transaction_time).to eq "01/06/2021"
+    expect(subject.transaction_time).to eq '01/06/2021'
   end
-end 
+end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class BankAccount
-  attr_reader :balance 
+  attr_reader :balance
   def initialize
     @balance = 0
   end
@@ -13,6 +15,6 @@ class BankAccount
   end
 
   def transaction_time
-    Time.new.strftime("%d/%m/%Y")
-  end 
+    Time.new.strftime('%d/%m/%Y')
+  end
 end
