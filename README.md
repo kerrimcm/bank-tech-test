@@ -43,3 +43,15 @@ As a customer
 So my banking app catches my mistakes
 I am not able to withdraw or deposit negative amounts
 ```
+
+```
+As a customer
+So I am not overdrawn
+I cannot withdraw on a balance of £0.00
+```
+
+``` 
+As a customer 
+So I can keep detailed financial records of my transactions
+I can see a printed statement of my recent transactions
+```
