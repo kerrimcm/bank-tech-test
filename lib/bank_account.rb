@@ -3,17 +3,19 @@
 require_relative 'transaction'
 
 class BankAccount
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   def initialize(transaction = Transaction)
     @balance = 0
     @transaction = transaction
+    @transactions = []
   end
 
   def deposit(amount)
     raise 'You may not deposit negative amounts' unless amount.positive?
     add_money(amount)
     credit = credit_transaction(amount)
+    @transactions << credit
   end
 
   def withdraw(amount)
@@ -23,6 +25,7 @@ class BankAccount
       raise 'You may not withdraw negative amounts' unless amount.positive?
       deduct_money(amount)
       debit = debit_transaciton(amount)
+      @transactions << debit
     end
   end
 

@@ -3,6 +3,10 @@
 require 'bank_account'
 
 describe BankAccount do
+  subject(:account) { described_class.new(transaction_class) }
+  let(:transaction_class) { double(:transaction_class, new: transaction) }
+  let(:transaction) { double(:transaction) }
+
   it 'allows the user to make a desposit' do
     subject.deposit(1)
     expect(subject.balance).to eq 1
@@ -31,5 +35,11 @@ describe BankAccount do
 
   it 'throws an error if I try to withdraw when there is 0 in the account' do
     expect { subject.withdraw(300)  }. to raise_error 'Your balance is currently £0.00'
+  end
+
+  it 'records the transactions of the customer' do
+    subject.deposit(1000)
+    subject.withdraw(50)
+    expect(account.transactions).to include transaction
   end
 end
