@@ -11,4 +11,8 @@ class BankAccount
   def withdraw(amount)
     @balance -= amount
   end
+
+  def transaction_time
+    Time.new.strftime("%d/%m/%Y")
+  end 
 end

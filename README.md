@@ -25,3 +25,9 @@ As a customer
 So that I can take money out of my account
 I would like to be able to make a withdrawal
 ```
+
+```
+As a customer 
+So that I can keep better track of my finances
+I would like to see the date of transaction for each deposit/withdrawal
+```
