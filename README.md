@@ -7,8 +7,15 @@
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 ## User stories
+
 ```
-As a user 
+As a customer
 So I can put my money somewhere
 I would like to open a bank account
+```
+
+```
+As a user
+So that I can top up my account
+I would like to be able to make a deposit
 ```
