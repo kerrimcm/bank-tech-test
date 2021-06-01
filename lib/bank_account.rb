@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
+require_relative 'printer'
 
 class BankAccount
   attr_reader :balance, :transactions
