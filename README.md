@@ -31,3 +31,9 @@ As a customer
 So that I can keep better track of my finances
 I would like to see the date of transaction for each deposit/withdrawal
 ```
+
+``` 
+As a customer
+So that I know everything is running smoothly in my account
+The details of each transaction are stored
+```
