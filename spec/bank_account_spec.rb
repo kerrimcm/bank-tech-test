@@ -17,9 +17,4 @@ describe BankAccount do
     subject.withdraw(50)
     expect(subject.balance).to eq 50
   end
-
-  it 'allows the user to see the date of transaction' do
-    subject.deposit(100)
-    expect(subject.transaction_time).to eq '01/06/2021'
-  end
 end
