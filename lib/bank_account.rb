@@ -15,7 +15,7 @@ class BankAccount
     raise 'You may not deposit negative amounts' unless amount.positive?
     add_money(amount)
     credit = credit_transaction(amount)
-    @transactions << credit
+    store(credit)
   end
 
   def withdraw(amount)
@@ -25,11 +25,15 @@ class BankAccount
       raise 'You may not withdraw negative amounts' unless amount.positive?
       deduct_money(amount)
       debit = debit_transaciton(amount)
-      @transactions << debit
+      store(debit)
     end
   end
 
   private
+
+  def store(transaction)
+    @transactions << transaction
+  end
 
   def credit_transaction(amount)
     @transaction.new(amount, 0, @balance)
