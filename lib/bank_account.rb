@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class BankAccount
   attr_reader :balance
   def initialize
@@ -7,7 +5,7 @@ class BankAccount
   end
 
   def deposit(amount)
-    @balance += amount
+    add_money(amount)
   end
 
   def withdraw(amount)
@@ -16,5 +14,11 @@ class BankAccount
 
   def transaction_time
     Time.new.strftime('%d/%m/%Y')
+  end
+
+  private
+
+  def add_money(amount)
+    @balance += amount
   end
 end
