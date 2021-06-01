@@ -6,7 +6,7 @@
 - Account statement (date, amount, balance) printing.
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-## User stories
+User stories
 
 ```
 As a customer
@@ -18,4 +18,10 @@ I would like to open a bank account
 As a customer
 So that I can top up my account
 I would like to be able to make a deposit
+```
+
+```
+As a customer
+So that I can take money out of my account
+I would like to be able to make a withdrawal
 ```
