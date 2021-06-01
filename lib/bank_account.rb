@@ -1,5 +1,6 @@
 class BankAccount
   attr_reader :balance
+  
   def initialize
     @balance = 0
   end
@@ -9,7 +10,7 @@ class BankAccount
   end
 
   def withdraw(amount)
-    @balance -= amount
+    deduct_money(amount)
   end
 
   def transaction_time
@@ -21,4 +22,8 @@ class BankAccount
   def add_money(amount)
     @balance += amount
   end
-end
+  
+  def deduct_money(amount)
+    @balance -= amount
+  end
+end 
