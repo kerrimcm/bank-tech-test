@@ -15,7 +15,7 @@ I would like to open a bank account
 ```
 
 ```
-As a user
+As a customer
 So that I can top up my account
 I would like to be able to make a deposit
 ```

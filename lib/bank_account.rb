@@ -1,9 +1,14 @@
 class BankAccount
-  def deposit(amount)
 
+  def initialize
+    @balance = 0
+  end
+
+  def deposit(amount)
+    @balance += amount
   end
 
   def balance
-    1
+    @balance
   end 
 end
