@@ -11,6 +11,7 @@ class BankAccount
   end
 
   def deposit(amount)
+    raise 'You may not deposit negative amounts' unless amount.positive?
     add_money(amount)
     credit = credit_transaction(amount)
   end

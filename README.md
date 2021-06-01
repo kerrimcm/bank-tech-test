@@ -37,3 +37,9 @@ As a customer
 So that I know everything is running smoothly in my account
 The details of each transaction are stored
 ```
+
+```
+As a customer
+So my banking app catches my mistakes
+I am not able to withdraw or deposit negative amounts
+```
