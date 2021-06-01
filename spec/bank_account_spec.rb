@@ -23,4 +23,8 @@ describe BankAccount do
   it 'throws an error if I try to deposit a negative amount' do
     expect { subject.deposit(-300)  }. to raise_error 'You may not deposit negative amounts'
   end
+
+  it 'throws an error if I try to withdraw a negative amount' do
+    expect { subject.withdraw(-300)  }. to raise_error 'You may not withdraw negative amounts'
+  end
 end

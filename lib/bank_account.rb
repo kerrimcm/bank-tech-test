@@ -17,6 +17,7 @@ class BankAccount
   end
 
   def withdraw(amount)
+    raise 'You may not withdraw negative amounts' unless amount.positive?
     deduct_money(amount)
     debit = debit_transaciton(amount)
   end
