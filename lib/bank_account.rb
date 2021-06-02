@@ -15,16 +15,18 @@ class BankAccount
 
   def deposit(amount)
     raise 'You may not deposit negative amounts' unless amount.positive?
+
     add_money(amount)
     credit = credit_transaction(amount)
     store(credit)
   end
 
   def withdraw(amount)
-    if @balance == 0 
+    if @balance == 0
       raise "Your balance is currently £#{@balance}.00"
-    else 
+    else
       raise 'You may not withdraw negative amounts' unless amount.positive?
+
       deduct_money(amount)
       debit = debit_transaciton(amount)
       store(debit)

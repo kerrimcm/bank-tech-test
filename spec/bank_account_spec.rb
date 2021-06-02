@@ -26,16 +26,16 @@ describe BankAccount do
   end
 
   it 'throws an error if I try to deposit a negative amount' do
-    expect { subject.deposit(-300)  }. to raise_error 'You may not deposit negative amounts'
+    expect { subject.deposit(-300) }. to raise_error 'You may not deposit negative amounts'
   end
 
   it 'throws an error if I try to withdraw a negative amount' do
     subject.deposit(1000)
-    expect { subject.withdraw(-300)  }. to raise_error 'You may not withdraw negative amounts'
+    expect { subject.withdraw(-300) }. to raise_error 'You may not withdraw negative amounts'
   end
 
   it 'throws an error if I try to withdraw when there is 0 in the account' do
-    expect { subject.withdraw(300)  }. to raise_error 'Your balance is currently £0.00'
+    expect { subject.withdraw(300) }. to raise_error 'Your balance is currently £0.00'
   end
 
   it 'records the transactions of the customer' do
