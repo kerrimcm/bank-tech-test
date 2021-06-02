@@ -5,6 +5,7 @@ A program which emulates the behaviour of a bank account where a user can make d
 - `git clone` this repo
 - `cd` into the relevant directory 
 - Run `irb` in your terminal to manually test the code, see example output below:
+
 ```
 3.0.0 :001 > require './lib/bank_account.rb'
  => true 
@@ -22,6 +23,14 @@ date || credit || debit || balance
 02/06/2021 ||  || 50.00 || 50.00
 02/06/2021 || 100.00 ||  || 100.00
 ```
+
+## My approach and code structure 
+- From the outset I wanted to ensure a very clear distinction of duty between each class
+- I started by breaking down the problem into a series of [user stories](#user-stories) and building out the `BankAccount` class
+- As soon as I approached the problem of covering credit/debit transactions I started creating the `Transaction` class to handle this responsibility 
+- The same for when I needed to handle the output of the bank statement with the `Printer` class
+- The `BankAccount` class handles all the key interactions with the user including deposits, withdrawals and summaries
+
 ## Running tests, test coverage and linting
 - Run `bundle install` to set up dependencies 
 - Run `rspec` to see tests pass with test coverage 
@@ -33,7 +42,7 @@ date || credit || debit || balance
 - Account statement (date, amount, balance) printing
 - Data is kept in memory 
 
-User stories
+## User stories
 
 ```
 As a customer
