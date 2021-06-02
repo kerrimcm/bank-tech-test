@@ -24,15 +24,13 @@ class BankAccount
   end
 
   def withdraw(amount)
-    if @balance == 0
-      raise "Your balance is currently £#{@balance}.00"
-    else
-      raise 'You may not withdraw negative amounts' unless amount.positive?
+    raise "Your balance is currently £#{@balance}.00" if @balance.zero?
 
-      deduct_money(amount)
-      debit = debit_transaciton(amount)
-      store(debit)
-    end
+    raise 'You may not withdraw negative amounts' unless amount.positive?
+
+    deduct_money(amount)
+    debit = debit_transaciton(amount)
+    store(debit)
   end
 
   def summary

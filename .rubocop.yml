@@ -1,0 +1,8 @@
+Layout/LineLength:
+  Max: 150
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+  - "./spec/unit_tests/bank_account_spec.rb"
+  - "./spec/feature_spec.rb"

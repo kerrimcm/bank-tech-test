@@ -3,7 +3,9 @@
 require 'bank_account'
 
 describe BankAccount do
-  let(:bank_account) { described_class.new(printed_statement, transaction_class) }
+  let(:bank_account) do
+    described_class.new(printed_statement, transaction_class)
+  end
   let(:transaction_class) { double(:transaction_class, new: transaction) }
   let(:transaction) { double(:transaction) }
   let(:printed_statement) { double(:printed_statement) }

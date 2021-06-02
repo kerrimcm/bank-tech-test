@@ -4,7 +4,9 @@ require 'transaction'
 
 describe Transaction do
   let(:account) { double BankAccount.new }
-  subject(:transaction) { described_class.new(account.deposit, account.withdraw, account.balance) }
+  subject(:transaction) do
+    described_class.new(account.deposit, account.withdraw, account.balance)
+  end
 
   it 'stores the relevant info about each transaction' do
     allow(account).to receive(:deposit).and_return(150)

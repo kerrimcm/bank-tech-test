@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank_account'
 
 describe 'Bank account features' do
@@ -27,7 +29,7 @@ describe 'Bank account features' do
   end
 
   context '#summary' do
-    it 'prints the past several transactions in reverse chronological order in a statement' do
+    it 'prints the past several transactions in reverse chronological order' do
       @new_account.deposit(1000)
       @new_account.withdraw(500)
       @new_account.deposit(2000)
