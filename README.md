@@ -33,7 +33,7 @@ date || credit || debit || balance
 
 ## Running tests, test coverage and linting
 - Run `bundle install` to set up dependencies 
-- Run `rspec` to see tests pass with test coverage 
+- Run `rspec` to see tests pass with 100% test coverage 
 - Run `rubocop` to see any issues detected with code quality
 
 ## Matching tech test requirements
