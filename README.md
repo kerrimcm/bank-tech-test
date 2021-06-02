@@ -1,4 +1,7 @@
 # Bank Tech Test
+
+[![Build Status](https://travis-ci.com/kerrimcm/bank-tech-test.svg?branch=master)](https://travis-ci.com/kerrimcm/bank-tech-test)
+
 A program which emulates the behaviour of a bank account where a user can make deposits, withdrawals and print out a summary of their transactions. 
 
 ## Getting started
