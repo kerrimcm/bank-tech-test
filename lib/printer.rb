@@ -9,8 +9,14 @@ class Printer
   end
 
   def print_body
-    @transactions.map do |transaction| 
-      "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.current_balance}\n"
-    end
+    body = @transactions.reverse.map do |transaction| 
+           "#{transaction.date} || #{format(transaction.credit)} || "\
+           "#{format(transaction.debit)} || #{format(transaction.current_balance)}\n"
+        end
+    body.join("")
+  end
+
+  def format(amount)
+    amount == 0 ? "" : sprintf('%.2f', amount)
   end
 end
