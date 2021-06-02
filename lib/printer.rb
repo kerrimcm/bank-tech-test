@@ -2,16 +2,15 @@
 
 class Printer
   def print(transactions)
-    @transactions = transactions
-    puts(print_header + print_body)
+    puts(print_header + print_body(transactions))
   end
 
   def print_header
     "date || credit || debit || balance\n"
   end
 
-  def print_body
-    body = @transactions.reverse.map do |transaction|
+  def print_body(transactions)
+    body = transactions.reverse.map do |transaction|
       "#{transaction.date} || #{formatter(transaction.credit)} || "\
       "#{formatter(transaction.debit)} || "\
       "#{formatter(transaction.current_balance)}\n"
