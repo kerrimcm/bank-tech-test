@@ -1,4 +1,31 @@
 # Bank Tech Test
+A program which emulates the behaviour of a bank account where a user can make deposits, withdrawals and print out a summary of their transactions. 
+
+## Getting started
+- `git clone` this repo
+- `cd` into the relevant directory 
+- Run `irb` in your terminal to manually test the code, see example output below:
+```
+3.0.0 :001 > require './lib/bank_account.rb'
+ => true 
+3.0.0 :002 > new_account = BankAccount.new
+ => #<BankAccount:0x00007ffebe91b030 @balance=0, @transaction=Transaction, @transactions=[], @printed_statement=#<Printer:0x00007ffebe91afe0>> 
+3.0.0 :003 > new_account.deposit(100)
+ => [#<Transaction:0x00007ffebe9622a0 @credit=100, @debit=0, @current_balance=100, @date="02/06/2021">] 
+3.0.0 :004 > new_account.withdraw(50)
+ => [#<Transaction:0x00007ffebe9622a0 @credit=100, @debit=0, @current_balance=100, @date="02/06/2021">, #<Transaction:0x00007ffebe08bd48 @credit=0, @debit=50, @current_balance=50, @date="02/06/2021">] 
+3.0.0 :005 > new_account.deposit(25)
+ => [#<Transaction:0x00007ffebe9622a0 @credit=100, @debit=0, @current_balance=100, @date="02/06/2021">, #<Transaction:0x00007ffebe08bd48 @credit=0, @debit=50, @current_balance=50, @date="02/06/2021">, #<Transaction:0x00007ffebe969550 @credit=25, @debit=0, @current_balance=75, @date="02/06/2021">] 
+3.0.0 :006 > new_account.summary
+date || credit || debit || balance
+02/06/2021 || 25.00 ||  || 75.00
+02/06/2021 ||  || 50.00 || 50.00
+02/06/2021 || 100.00 ||  || 100.00
+```
+## Running tests, test coverage and linting
+- Run `bundle install` to set up dependencies 
+- Run `rspec` to see tests pass with test coverage 
+- Run `rubocop` to see any issues detected with code quality
 
 ## Matching tech test requirements
 - You are able to interact with this code via IRB 
