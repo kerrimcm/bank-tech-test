@@ -8,11 +8,11 @@ class BankAccount
 
   DEFUALT_BALANCE = 0
 
-  def initialize(printed_statement = Printer.new, transaction = Transaction)
+  def initialize(printer = Printer.new, transaction = Transaction)
     @balance = DEFUALT_BALANCE
     @transaction = transaction
     @transactions = []
-    @printed_statement = printed_statement
+    @printer = printer
   end
 
   def deposit(amount)
@@ -34,7 +34,7 @@ class BankAccount
   end
 
   def summary
-    @printed_statement.print(@transactions)
+    @printer.print(@transactions)
   end
 
   private
