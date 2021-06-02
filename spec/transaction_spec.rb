@@ -13,6 +13,6 @@ describe Transaction do
     expect(transaction.credit).to eq 150
     expect(transaction.debit).to eq 0
     expect(transaction.current_balance).to eq 150
-    expect(transaction.date).to eq '01/06/2021'
+    expect(transaction.date).to eq Time.new.strftime('%d/%m/%Y')
   end
 end

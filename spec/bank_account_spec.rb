@@ -3,9 +3,10 @@
 require 'bank_account'
 
 describe BankAccount do
-  subject(:account) { described_class.new(transaction_class) }
+  let(:bank_account) { described_class.new(printed_statement, transaction_class) }
   let(:transaction_class) { double(:transaction_class, new: transaction) }
   let(:transaction) { double(:transaction) }
+  let(:printed_statement) { double(:printed_statement) }
 
   it 'allows the user to make a desposit' do
     subject.deposit(1)
@@ -38,8 +39,12 @@ describe BankAccount do
   end
 
   it 'records the transactions of the customer' do
-    subject.deposit(1000)
-    subject.withdraw(50)
-    expect(account.transactions).to include transaction
+    bank_account.deposit(1000)
+    expect(bank_account.transactions).to include transaction
+  end
+
+  it 'prints out a summary of transactions' do
+    expect(printed_statement).to receive(:print)
+    bank_account.summary
   end
 end

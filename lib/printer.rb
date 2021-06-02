@@ -1,9 +1,16 @@
 class Printer
+  def print(transactions)
+    @transactions = transactions
+    puts(print_header + print_body)
+  end 
+
   def print_header
     "date || credit || debit || balance\n"
   end
 
   def print_body
-    "01/06/2021 || 1500.00 || || 1500.00\n"
+    @transactions.map do |transaction| 
+      "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.current_balance}\n"
+    end
   end
 end

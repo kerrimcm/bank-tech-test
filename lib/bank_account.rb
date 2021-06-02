@@ -6,10 +6,11 @@ require_relative 'printer'
 class BankAccount
   attr_reader :balance, :transactions
 
-  def initialize(transaction = Transaction)
+  def initialize(printed_statement = Printer.new, transaction = Transaction)
     @balance = 0
     @transaction = transaction
     @transactions = []
+    @printed_statement = printed_statement
   end
 
   def deposit(amount)
@@ -28,6 +29,10 @@ class BankAccount
       debit = debit_transaciton(amount)
       store(debit)
     end
+  end
+
+  def summary
+    @printed_statement.print(@transactions)
   end
 
   private
