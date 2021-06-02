@@ -6,8 +6,10 @@ require_relative 'printer'
 class BankAccount
   attr_reader :balance, :transactions
 
+  DEFUALT_BALANCE = 0
+
   def initialize(printed_statement = Printer.new, transaction = Transaction)
-    @balance = 0
+    @balance = DEFUALT_BALANCE
     @transaction = transaction
     @transactions = []
     @printed_statement = printed_statement
